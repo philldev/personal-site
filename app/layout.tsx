@@ -29,10 +29,29 @@ export default function RootLayout({
         className={cn(
           `${geistSans.variable} ${geistMono.variable} antialiased min-h-screen text-foreground`,
           "bg-gradient-to-b from-slate-950/20 to-amber-950/20",
+          "font-mono font-light",
         )}
       >
-        <header className="h-16"></header>
-        {children}
+        <header className="h-16 border-b border-grid">
+          <div className="max-w-4xl mx-auto w-full h-full flex items-center justify-between gap-4 border-x border-grid px-10">
+            <span className="tracking-widest font-bold">DEDDY W.</span>
+            <div className="flex items-center gap-4">
+              <div>About</div>/<div>Work</div>/<div>Blog</div>/
+              <div>Contact</div>
+            </div>
+          </div>
+        </header>
+        <main className="max-w-4xl w-full mx-auto py-20 border-x border-grid px-10 min-h-[calc(100vh-(var(--spacing)*32))]">
+          {children}
+        </main>
+        <footer className="h-16 border-t border-grid">
+          <div className="max-w-4xl w-full mx-auto flex items-center gap-4 border-x border-grid px-10 h-full text-xs">
+            <a>x.com @deddywolley</a>
+            <a>IG @deddywolley</a>
+            <a>linkedin</a>
+            <a>github</a>
+          </div>
+        </footer>
       </body>
     </html>
   );

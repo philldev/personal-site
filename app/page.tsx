@@ -20,12 +20,16 @@ export default function Home() {
             in Jakarta 🇮🇩.
           </p>
 
-          <p>
-            I&apos;m passionate about building things with Javascript, and
-            I&apos;ve experience with some frameworks and libraries like React,
-            Next.js, and TailwindCSS. I use NEOVIM(BTW) as my primary text
-            editor, and WEZTERM as my main terminal.
+          <p className="text-foreground/60 text-sm">
+            I&apos;ve build production applications with JavaScript, frequently
+            using Next.js and Tailwind CSS. I&apos;m also a fan of TypeScript
+            and a Neovim user. For personal tools, I prefer Node.js or Bun (Rust
+            maybe soon). I find Bun particularly enjoyable to work with.
           </p>
+
+          {/* <p className="text-xs text-foreground/5"> */}
+          {/*   My favorite techstack is CURSOR, V0, and chatgpt. hahaha jk */}
+          {/* </p> */}
 
           <div className="flex gap-4">
             <Button asChild>

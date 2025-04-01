@@ -1,0 +1,1 @@
+- [ ] add typewriter effect to the h1 text

@@ -1,12 +1,13 @@
 import { Button } from "@/components/ui/button";
+import { Title } from "./_title";
 
 export default function Home() {
   return (
     <>
-      <section id="about" className="pt-20 pb-32 md:min-h-svh">
+      <section id="about" className="pt-20 pb-32">
         <div className="grid gap-6">
           <p>Hey there! I&apos;m Deddy, a</p>
-          <h1 className="text-4xl md:text-9xl">Web Developer</h1>
+          <Title initialText="Web Developer" />
           <p className="max-w-2xl">
             currently working as a frontend engineer at{" "}
             <a
@@ -40,16 +41,16 @@ export default function Home() {
       </section>
 
       <section id="work" className="py-20">
-        <div className="flex flex-col w-full">
-          <h1 className="text-4xl md:text-9xl">Work</h1>
-          <p>Cooking... 🍳</p>
+        <div className="flex flex-col w-full gap-4">
+          <h1 className="text-4xl font-medium">Work</h1>
+          <p className="text-muted-foreground">Cooking... 🍳</p>
         </div>
       </section>
 
       <section id="blog" className="py-20">
-        <div className="flex flex-col w-full">
-          <h1 className="text-4xl md:text-9xl">Blog</h1>
-          <p>Cooking... 🍳</p>
+        <div className="flex flex-col w-full gap-4">
+          <h1 className="text-4xl font-medium">Blog</h1>
+          <p className="text-muted-foreground">Cooking... 🍳</p>
         </div>
       </section>
     </>

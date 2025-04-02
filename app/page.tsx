@@ -3,20 +3,39 @@ import { Title } from "./_title";
 
 export const metadata = {
   title: "Deddy Wolley - Software Engineer",
-  description: "I'm a software engineer who loves building things.",
+  description: "software engineer.",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.deddywolley.com",
     siteName: "Deddy Wolley",
     title: "Deddy Wolley - Software Engineer",
-    description: "I'm a software engineer who loves building things.",
+    description:
+      "I'm a software engineer who loves building things with javascript.",
   },
 };
+
+const githubUrl = "https://github.com/philldev";
+const linkedinUrl = "https://www.linkedin.com/in/deddy-wolley-b09ab312a/";
 
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "Person",
+            name: "Deddy Wolley",
+            url: "https://deddywolley.vercel.app",
+            jobTitle: "Software Engineer",
+            description:
+              "Deddy Wolley is a software engineer who loves building things with javascript.",
+            sameAs: [githubUrl, linkedinUrl],
+          }),
+        }}
+      />
       <section id="about" className="pt-20 max-w-3xl w-full mx-auto">
         <div className="grid gap-6">
           <p>Hey there! I&apos;m Deddy, a</p>
@@ -42,12 +61,10 @@ export default function Home() {
 
           <div className="flex gap-4">
             <Button asChild>
-              <a href="https://github.com/philldev">View Github</a>
+              <a href={githubUrl}>View Github</a>
             </Button>
             <Button variant="secondary" asChild>
-              <a href="https://www.linkedin.com/in/deddy-wolley-b09ab312a/">
-                View Linkedin
-              </a>
+              <a href={linkedinUrl}>View Linkedin</a>
             </Button>
           </div>
         </div>

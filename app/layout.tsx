@@ -65,12 +65,13 @@ export default function RootLayout({
           `${geistSans.variable} ${geistMono.variable} antialiased min-h-screen text-foreground bg-background`,
           "font-mono font-light",
           "text-sm md:text-base",
+          "min-h-svh flex flex-col",
         )}
       >
         <div className="fixed h-screen w-screen inset-0 bg-gradient-to-b from-slate-950/20 to-amber-950/20" />
         <div className="fixed h-screen w-screen inset-0 bg-gradient-to-br from-blue-950/10 to-slate-950/10" />
-        <header className="h-16 border-b border-grid sticky top-0 bg-background/50 backdrop-blur z-10">
-          <div className="max-w-5xl mx-auto w-full h-full flex items-center justify-between gap-4 lg:border-x border-grid md:px-10 px-4">
+        <header className="h-16 sticky top-0 z-10 md:px-10 px-4">
+          <div className="w-full h-full flex items-center justify-between gap-4 max-w-3xl mx-auto">
             <span className="tracking-widest font-bold">DEDDY W.</span>
             <div className="flex items-center gap-4 text-muted-foreground">
               {headerLinks.map((link) => (
@@ -83,11 +84,9 @@ export default function RootLayout({
             </div>
           </div>
         </header>
-        <main className="max-w-5xl w-full mx-auto lg:border-x border-grid px-4 md:px-10 relative pb-20">
-          {children}
-        </main>
-        <footer className="border-t border-grid">
-          <ul className="max-w-5xl py-4 w-full mx-auto flex items-center gap-4 lg:border-x border-grid px-4 md:px-10 h-full text-xs flex-col md:flex-row">
+        <main className="px-4 md:px-10 flex-1 flex flex-col">{children}</main>
+        <footer className="px-4 md:px-10 py-4">
+          <ul className="flex gap-4 text-xs max-w-3xl mx-auto w-full">
             {footerLinks.map((link) => (
               <li key={link.label}>
                 <Link shallow={false} href={link.href}>

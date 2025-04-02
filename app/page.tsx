@@ -4,7 +4,7 @@ import { Title } from "./_title";
 export default function Home() {
   return (
     <>
-      <section id="about" className="pt-20 pb-32">
+      <section id="about" className="pt-20 max-w-3xl w-full mx-auto">
         <div className="grid gap-6">
           <p>Hey there! I&apos;m Deddy, a</p>
           <Title initialText="Web Developer" />
@@ -27,10 +27,6 @@ export default function Home() {
             maybe soon). I find Bun particularly enjoyable to work with.
           </p>
 
-          {/* <p className="text-xs text-foreground/5"> */}
-          {/*   My favorite techstack is CURSOR, V0, and chatgpt. hahaha jk */}
-          {/* </p> */}
-
           <div className="flex gap-4">
             <Button asChild>
               <a href="https://github.com/philldev">View Github</a>
@@ -41,20 +37,6 @@ export default function Home() {
               </a>
             </Button>
           </div>
-        </div>
-      </section>
-
-      <section id="work" className="py-20">
-        <div className="flex flex-col w-full gap-4">
-          <h1 className="text-4xl font-medium">Work</h1>
-          <p className="text-muted-foreground">Cooking... 🍳</p>
-        </div>
-      </section>
-
-      <section id="blog" className="py-20">
-        <div className="flex flex-col w-full gap-4">
-          <h1 className="text-4xl font-medium">Blog</h1>
-          <p className="text-muted-foreground">Cooking... 🍳</p>
         </div>
       </section>
     </>

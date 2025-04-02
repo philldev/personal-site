@@ -84,7 +84,9 @@ export default function RootLayout({
             </div>
           </div>
         </header>
-        <main className="px-4 md:px-10 flex-1 flex flex-col">{children}</main>
+        <main className="px-4 relative md:px-10 flex-1 flex flex-col">
+          {children}
+        </main>
         <footer className="px-4 md:px-10 py-4">
           <ul className="flex gap-4 text-xs max-w-3xl mx-auto w-full">
             {footerLinks.map((link) => (

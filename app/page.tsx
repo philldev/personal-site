@@ -1,6 +1,19 @@
 import { Button } from "@/components/ui/button";
 import { Title } from "./_title";
 
+export const metadata = {
+  title: "Deddy Wolley - Software Engineer",
+  description: "I'm a software engineer who loves building things.",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://www.deddywolley.com",
+    siteName: "Deddy Wolley",
+    title: "Deddy Wolley - Software Engineer",
+    description: "I'm a software engineer who loves building things.",
+  },
+};
+
 export default function Home() {
   return (
     <>

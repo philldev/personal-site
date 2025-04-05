@@ -28,7 +28,7 @@ export default function Home() {
             "@context": "https://schema.org/",
             "@type": "Person",
             name: "Deddy Wolley",
-            url: "https://deddywolley.vercel.app",
+            url: "https://deddywolley.com",
             jobTitle: "Software Engineer",
             description:
               "Deddy Wolley is a software engineer who loves building things with javascript.",

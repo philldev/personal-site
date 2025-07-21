@@ -2,14 +2,14 @@ import { Button } from "@/components/ui/button";
 import { Title } from "./_title";
 
 export const metadata = {
-  title: "Deddy Wolley - Software Engineer",
-  description: "software engineer.",
+  title: "Deddy Wolley",
+  description: "Fullstack Web Developer",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://www.deddywolley.com",
     siteName: "Deddy Wolley",
-    title: "Deddy Wolley - Software Engineer",
+    title: "Deddy Wolley",
     description:
       "I'm a software engineer who loves building things with javascript.",
   },

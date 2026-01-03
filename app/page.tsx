@@ -53,10 +53,12 @@ export default function Home() {
           </p>
 
           <p className="text-foreground/60 text-sm">
-            I&apos;ve build production applications with JavaScript, frequently
-            using Next.js and Tailwind CSS. I&apos;m also a fan of TypeScript
-            and a Neovim user. For personal tools, I prefer Node.js or Bun (Rust
-            maybe soon). I find Bun particularly enjoyable to work with.
+            I build and maintain production web applications using JavaScript,
+            React, Next.js, and Tailwind CSS, with a strong preference for
+            TypeScript. I care about performance, usability, and the small
+            details that make interfaces feel right. Outside of product work, I
+            enjoy building tools with Node.js and Bun, and I’m always exploring
+            better ways to improve developer experience.
           </p>
 
           <div className="flex gap-4">

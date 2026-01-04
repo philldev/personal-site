@@ -34,6 +34,3 @@ Personal portfolio website for Deddy Wolley.
 - `app/page.tsx`: Main landing page content.
 - `app/globals.css`: Tailwind 4 configuration and theme variables.
 - `components/typewriter.tsx`: Custom typewriter effect using Framer Motion.
-
-## Ongoing Tasks
-- [ ] Add typewriter effect to the h1 text in `app/page.tsx`.

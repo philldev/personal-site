@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Title } from "./_title";
+import { Github, Linkedin } from "lucide-react";
+import Link from "next/link";
 
 export const metadata = {
   title: "Deddy Wolley",
@@ -63,10 +65,19 @@ export default function Home() {
 
           <div className="flex gap-4">
             <Button asChild>
-              <a href={githubUrl}>View Github</a>
+              <Link href="/work">Featured Work</Link>
             </Button>
-            <Button variant="secondary" asChild>
-              <a href={linkedinUrl}>View Linkedin</a>
+            <Button variant="ghost" size="icon" asChild>
+              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                <Github className="w-5 h-5" />
+                <span className="sr-only">Github</span>
+              </a>
+            </Button>
+            <Button variant="ghost" size="icon" asChild>
+              <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
+                <Linkedin className="w-5 h-5" />
+                <span className="sr-only">Linkedin</span>
+              </a>
             </Button>
           </div>
         </div>

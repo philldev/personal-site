@@ -13,7 +13,7 @@ export function Title({ initialText }: { initialText: string }) {
   const [index, setIndex] = useState(0);
 
   return (
-    <h1 className="text-4xl md:text-9xl">
+    <h1 className="text-4xl md:text-7xl">
       <span className="sr-only">{initialText}</span>
       <div aria-hidden>
         <Typewriter

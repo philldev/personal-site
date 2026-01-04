@@ -26,7 +26,7 @@ export default function WorkPage() {
       <div className="grid gap-8">
         {projects.map((project) => (
           <Link key={project.slug} href={`/work/${project.slug}`}>
-            <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-white/10 hover:border-white/20 transition-colors cursor-pointer h-full">
+            <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-white/10 hover:border-white/20 transition-colors cursor-pointer h-full pt-0">
               <div className="relative aspect-video w-full">
                 <Image
                   src={project.image}

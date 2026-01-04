@@ -5,6 +5,7 @@ import { ArrowLeft, Calendar, ExternalLink, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ReactMarkdown from "react-markdown";
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -94,10 +95,9 @@ export default async function ProjectPage({
           </Button>
         </div>
 
-        <div
-          className="prose prose-invert prose-lg max-w-none mt-10"
-          dangerouslySetInnerHTML={{ __html: project.content }}
-        />
+        <div className="prose prose-invert prose-lg max-w-none mt-10">
+          <ReactMarkdown>{project.content}</ReactMarkdown>
+        </div>
       </div>
     </article>
   );

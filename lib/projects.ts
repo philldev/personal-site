@@ -12,65 +12,92 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    slug: "e-commerce-platform",
-    title: "E-Commerce Platform",
+    slug: "oneux",
+    title: "ONE UX — Frontend Architecture for a Multi-Site Marketing Platform",
     description:
-      "A modern headless e-commerce solution built with Next.js and Shopify, featuring lightning-fast page loads and seamless checkout experience.",
+      "A shared Next.js frontend platform that enables frequent campaign launches across multiple websites, optimized for SEO, performance, and smooth page navigation through server-rendered HTML.",
     year: "2024",
-    role: "Lead Frontend Engineer",
-    tags: ["Next.js", "Shopify", "Tailwind CSS"],
+    role: "Frontend Engineer",
+    tags: [
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Docker",
+      "CI/CD",
+      "AWS ECS",
+      "Incremental Static Regeneration",
+      "UI Builder",
+    ],
     image: "/case-study-1.svg",
-    link: "https://example.com/ecommerce",
+    link: "https://amild.id",
     content: `
-      <p>This project involved migrating a legacy Monolithic e-commerce site to a modern headless architecture using Next.js and Shopify Storefront API.</p>
-      <h3>Key Challenges</h3>
-      <ul>
-        <li>Optimizing Core Web Vitals for better SEO ranking.</li>
-        <li>Implementing a custom cart and checkout flow.</li>
-        <li>Synchronizing inventory across multiple sales channels.</li>
-      </ul>
-      <h3>Outcome</h3>
-      <p>The new platform resulted in a 40% increase in conversion rates and a 60% improvement in page load speeds. The client also saw a significant boost in organic traffic due to improved SEO.</p>
-    `,
+I helped our team design and implement the **frontend architecture** of **ONE UX**, a multi-site marketing platform that runs multiple websites from a **single shared Next.js codebase**, with a strong focus on SEO, performance, and scalability at the frontend layer.
+
+### The Challenge
+Our client needed to **launch campaigns frequently** and update multiple websites quickly, but the existing frontend setup relied on separate standalone projects. This led to duplicated UI logic, slower iteration, and inconsistent performance across sites.
+
+### The Solution
+I helped design the **frontend system** using **Next.js with Incremental Static Regeneration (ISR)**. Pages are rendered as **HTML on the server**, allowing users to navigate between pages with a smoother, more predictable experience compared to purely client-rendered pages. All sites share the same frontend components, layouts, and SEO behavior, while a **custom frontend page builder** enables flexible page composition without repeated frontend development work.
+
+ISR was chosen to ensure fast initial loads, strong SEO, and the ability to update content without full rebuilds.
+
+### The Result
+- Faster frontend rollout of new websites and campaign pages for our client
+- Faster code builds due to Next.js **Incremental Static Regeneration**
+- Improved user experience when navigating between pages due to server-rendered HTML
+- Improved Core Web Vitals and SEO reliability
+
+### My Contribution
+I helped our team with frontend architecture decisions, implemented the ISR strategy on the frontend, built the page builder abstractions, and handled frontend migration of existing sites. I also supported other frontend developers by helping with **project onboarding**, sharing architectural context, and unblocking implementation questions.
+`,
   },
   {
-    slug: "task-management-app",
-    title: "Task Management App",
+    slug: "premiro",
+    title: "Premiro — Insurance Landing Page & Booking Flow (Frontend)",
     description:
-      "Real-time collaboration tool for remote teams allowing users to organize tasks, chat in real-time, and track project progress.",
-    year: "2023",
-    role: "Fullstack Developer",
-    tags: ["React", "Firebase", "TypeScript"],
+      "SEO-optimized, multi-language insurance landing pages with reusable form architecture, built to deliver a smooth booking experience across multiple insurance products.",
+    year: "2025",
+    role: "Frontend Engineer",
+    tags: [
+      "Next.js",
+      "Incremental Static Regeneration",
+      "SEO",
+      "Multi-Language",
+      "Form Architecture",
+      "Booking Flow",
+    ],
     image: "/case-study-2.svg",
-    link: "https://example.com/task-app",
+    link: "https://premiro.com",
     content: `
-      <p>Built a collaborative task management application designed for remote-first teams. The app features real-time updates, drag-and-drop boards, and integrated chat.</p>
-      <h3>Technical Details</h3>
-      <p>Used Firebase Firestore for real-time data synchronization and Cloud Functions for backend logic. The frontend was built with React and heavily utilized custom hooks for state management.</p>
-      <h3>Features</h3>
-      <ul>
-        <li>Real-time Kanban board.</li>
-        <li>Team chat with file sharing.</li>
-        <li>Automated email notifications.</li>
-      </ul>
-    `,
-  },
-  {
-    slug: "finance-dashboard",
-    title: "Finance Dashboard",
-    description:
-      "Comprehensive analytics dashboard for personal finance tracking with interactive charts and budget management tools.",
-    year: "2023",
-    role: "Frontend Developer",
-    tags: ["Next.js", "Recharts", "PostgreSQL"],
-    image: "/case-study-3.svg",
-    link: "https://example.com/finance",
-    content: `
-      <p>Developed a personal finance dashboard that aggregates data from various bank accounts and visualizes spending habits.</p>
-      <h3>Implementation</h3>
-      <p>Leveraged Recharts for rendering complex data visualizations. The backend was powered by Node.js and PostgreSQL to securely store transaction data.</p>
-      <p>Focus was placed on data privacy and security, ensuring that all sensitive information was encrypted both in transit and at rest.</p>
-    `,
+A multi-language insurance landing page and booking flow built with a reusable form architecture, optimized for SEO and user experience through server-rendered pages.
+
+I helped our team build the **frontend implementation** of **Premiro**, an insurance landing page and booking platform designed to support multiple insurance products, each with its own form structure and validation rules.
+
+### The Challenge
+Premiro needed to support:
+- **Multiple insurance products**, each requiring different form fields and validation logic
+- A **multi-step booking experience** that remained clear and easy to use
+- **Multi-language support** for both Indonesian (ID) and English (EN)
+- Strong **SEO requirements** for landing pages while maintaining a smooth user experience
+
+Managing complex, product-specific forms while ensuring good SEO and UX was the main challenge.
+
+### The Solution
+I designed and implemented the **frontend architecture using Next.js**, enabling pages to be rendered as HTML for better search engine visibility and faster initial loads.
+
+A **reusable form logic and component system** was created to handle different insurance products while keeping form behavior, validation, and layout consistent.
+
+Internationalization was integrated so content, form labels, and validation messages could be translated cleanly for both ID and EN, without compromising SEO.
+
+### The Result
+- SEO-friendly landing pages with fast initial page loads
+- Improved user experience during form navigation and submission
+- Reduced duplication through shared form logic and components
+- Consistent experience across multiple insurance products and languages
+
+### My Contribution
+I was the **only frontend developer** on the project, working closely with the **tech lead**. I handled day-to-day frontend implementation and architecture, built reusable form logic and components, implemented SEO and UX improvements with Next.js, integrated multi-language support, and collaborated with the tech lead on technical direction and reviews.
+`,
   },
 ];
 

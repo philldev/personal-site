@@ -26,11 +26,11 @@ const headerLinks = [
   },
   {
     label: "Work",
-    href: "#work",
+    href: "/work",
   },
   {
     label: "Blog",
-    href: "#blog",
+    href: "#",
   },
 ];
 
@@ -70,9 +70,11 @@ export default function RootLayout({
       >
         <div className="fixed h-screen w-screen inset-0 bg-gradient-to-b from-slate-950/20 to-amber-950/20" />
         <div className="fixed h-screen w-screen inset-0 bg-gradient-to-br from-blue-950/10 to-slate-950/10" />
-        <header className="h-16 sticky top-0 z-10 md:px-10 px-4">
+        <header className="h-16 sticky top-0 z-50 md:px-10 px-4 backdrop-blur-md border-b border-white/5">
           <div className="w-full h-full flex items-center justify-between gap-4 max-w-3xl mx-auto">
-            <span className="tracking-widest font-bold">DEDDY W.</span>
+            <Link href="/" className="tracking-widest font-bold">
+              DEDDY W.
+            </Link>
             <div className="flex items-center gap-4 text-muted-foreground">
               {headerLinks.map((link) => (
                 <div key={link.label}>

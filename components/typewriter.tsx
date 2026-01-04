@@ -48,7 +48,7 @@ export function Typewriter({
         custom={direction}
       >
         <span
-          className="absolute bg-amber-400 data-[blinking=true]:animate-caret-blink w-[22px] h-[47px] md:w-[77px] md:h-[166px]"
+          className="absolute bg-amber-400 data-[blinking=true]:animate-caret-blink w-[22px] h-[47px] md:w-[70px] md:h-[120px]"
           data-blinking={isAnimationDone}
           style={{
             left: cursor.left,

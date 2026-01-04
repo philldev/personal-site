@@ -44,11 +44,11 @@ export function Typewriter({
         variants={sentenceVariants}
         initial="hidden"
         animate="visible"
-        className="relative"
+        className="relative inline-block"
         custom={direction}
       >
         <span
-          className="absolute bg-amber-400 data-[blinking=true]:animate-caret-blink w-[22px] h-[47px] md:w-[70px] md:h-[120px]"
+          className="absolute bg-amber-400 data-[blinking=true]:animate-caret-blink w-[22px] h-[47px] md:w-[50px] md:h-[100px]"
           data-blinking={isAnimationDone}
           style={{
             left: cursor.left,
@@ -58,14 +58,8 @@ export function Typewriter({
         {children.split("").map((letter, index) => (
           <Letter
             onAnimationComplete={(el) => {
-              const windowWidth = window.innerWidth;
-
-              const isDesktop = windowWidth > 768;
-
-              const width = isDesktop ? 77 : 22;
-
               setCursor({
-                left: el.offsetLeft + (direction > 0 ? width : 0),
+                left: el.offsetLeft + (direction > 0 ? el.offsetWidth : 0),
                 top: el.offsetTop,
               });
               if (direction > 0 && index === children.length - 1) {

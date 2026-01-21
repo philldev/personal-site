@@ -5,7 +5,8 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Deddy Wolley",
-  description: "Fullstack Web Developer",
+  description:
+    "Frontend Engineer with 5+ years of experience building scalable, high-performance web applications using React and Next.js.",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -13,12 +14,12 @@ export const metadata = {
     siteName: "Deddy Wolley",
     title: "Deddy Wolley",
     description:
-      "I'm a software engineer who loves building things with javascript.",
+      "Frontend Engineer with 5+ years of experience building scalable, high-performance web applications using React and Next.js.",
   },
 };
 
 const githubUrl = "https://github.com/philldev";
-const linkedinUrl = "https://www.linkedin.com/in/deddy-wolley-b09ab312a/";
+const linkedinUrl = "https://www.linkedin.com/in/deddy-wolley/";
 
 export default function Home() {
   return (
@@ -43,7 +44,7 @@ export default function Home() {
           <p>Hey there! I&apos;m Deddy, a</p>
           <Title initialText="Web Developer" />
           <p className="max-w-2xl">
-            currently working as a frontend engineer at{" "}
+            Frontend Engineer at{" "}
             <a
               className="underline text-amber-300 font-bold"
               href="https://www.weekendinc.com"
@@ -51,16 +52,18 @@ export default function Home() {
             >
               Weekendinc
             </a>{" "}
-            in Jakarta 🇮🇩.
+            (Remote, Jakarta 🇮🇩), working on high-traffic production platforms.
           </p>
 
           <p className="text-foreground/60 text-sm">
             I build and maintain production web applications using JavaScript,
             React, Next.js, and Tailwind CSS, with a strong preference for
-            TypeScript. I care about performance, usability, and the small
-            details that make interfaces feel right. Outside of product work, I
-            enjoy building tools with Node.js and Bun, and I’m always exploring
-            better ways to improve developer experience.
+            TypeScript. I focus on performance, scalability, and usability,
+            applying SSR, SSG, and ISR strategies where they add real value. I
+            care deeply about clean architecture, reusable UI systems, and the
+            small details that make interfaces feel right. Outside of product
+            work, I enjoy building tools with Node.js and Bun, and continuously
+            improving developer experience through better tooling and workflows.
           </p>
 
           <div className="flex gap-4">

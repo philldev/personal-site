@@ -4,12 +4,7 @@ import { Typewriter } from "@/components/typewriter";
 import { useState } from "react";
 
 export function Title({ initialText }: { initialText: string }) {
-  const texts = [
-    initialText,
-    "Software Engineer",
-    "Frontend Developer",
-    "Fullstack Developer",
-  ];
+  const texts = [initialText, "Web Developer", "Fullstack Engineer"];
   const [index, setIndex] = useState(0);
 
   return (

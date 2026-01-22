@@ -44,7 +44,7 @@ export default function Home() {
           <p>Hey there! I&apos;m Deddy, a</p>
           <Title initialText="Frontend Engineer" />
           <p className="max-w-2xl">
-            Frontend Engineer at{" "}
+            at{" "}
             <a
               className="underline text-amber-300 font-bold"
               href="https://www.weekendinc.com"
@@ -52,7 +52,7 @@ export default function Home() {
             >
               WeekendInc
             </a>{" "}
-            (Remote, Jakarta 🇮🇩), working on high-traffic production platforms.
+            (Remote, Jakarta 🇮🇩).
           </p>
 
           <p className="text-foreground/60 text-sm">

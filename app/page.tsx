@@ -42,7 +42,7 @@ export default function Home() {
       <section id="about" className="pt-20 max-w-3xl w-full mx-auto">
         <div className="grid gap-6">
           <p>Hey there! I&apos;m Deddy, a</p>
-          <Title initialText="Web Developer" />
+          <Title initialText="Frontend Engineer" />
           <p className="max-w-2xl">
             Frontend Engineer at{" "}
             <a
@@ -50,7 +50,7 @@ export default function Home() {
               href="https://www.weekendinc.com"
               target="_blank"
             >
-              Weekendinc
+              WeekendInc
             </a>{" "}
             (Remote, Jakarta 🇮🇩), working on high-traffic production platforms.
           </p>

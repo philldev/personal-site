@@ -56,14 +56,7 @@ export default function Home() {
           </p>
 
           <p className="text-foreground/60 text-sm">
-            I build and maintain production web applications using JavaScript,
-            React, Next.js, and Tailwind CSS, with a strong preference for
-            TypeScript. I focus on performance, scalability, and usability,
-            applying SSR, SSG, and ISR strategies where they add real value. I
-            care deeply about clean architecture, reusable UI systems, and the
-            small details that make interfaces feel right. Outside of product
-            work, I enjoy building tools with Node.js and Bun, and continuously
-            improving developer experience through better tooling and workflows.
+            I build web applications using React and Next.js.
           </p>
 
           <div className="flex gap-4">

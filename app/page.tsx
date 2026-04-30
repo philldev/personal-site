@@ -47,12 +47,13 @@ export default function Home() {
             at{" "}
             <a
               className="underline text-amber-300 font-bold"
-              href="https://www.weekendinc.com"
+              href="https://www.bedfordlane.co"
               target="_blank"
             >
-              WeekendInc
+              Bedford Lane
             </a>{" "}
-            (Remote, Jakarta 🇮🇩).
+            (Melbourne 🇦🇺) — a Shopify Plus agency building high-performance
+            commerce experiences for global brands.
           </p>
 
           <p className="text-foreground/60 text-sm">

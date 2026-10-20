@@ -1,36 +1,14 @@
-# Project Context: Personal Site
+# Project context: personal site
 
-Personal portfolio website for Deddy Wolley.
+Personal portfolio for Deddy Wolley. Follow the supplied Paper design exports: a centered 640px content panel, Aspekta typography, light/dark themes, monochrome dithering, and green GitHub activity.
 
-## Tech Stack
-- **Framework:** Next.js 15 (App Router)
-- **Library:** React 19
-- **Styling:** Tailwind CSS 4, Motion (Framer Motion)
-- **UI Components:** Shadcn UI (New York style)
-- **Icons:** Lucide React (current), Hugeicons (preferred)
-- **Fonts:** Geist Sans & Mono (current), Figtree (preferred)
-- **Language:** TypeScript
-
-## Architecture & Conventions
-- **Routing:** Next.js App Router (`app/` directory).
-- **Components:** 
-  - Shared components in `components/`.
-  - UI primitives in `components/ui/` (managed by Shadcn CLI).
-- **Utilities:** Utility functions in `lib/utils.ts`.
-- **Styling:** 
-  - Uses Tailwind CSS 4 with `@theme` block in `app/globals.css`.
-  - OKLCH color space for theme variables.
-  - Dark mode is default (forced via `className="dark"` in `layout.tsx`).
-  - Uses gradients for background depth (Amber/Slate/Blue).
-
-## Style Guidelines
-- **Theme:** Maia style with Orange/Amber accents.
-- **Typography:** Modern and clean. `Figtree` font is the preferred sans-serif font.
-- **Animations:** Use `motion` for fluid transitions. The `Typewriter` component is used for hero text.
-- **Design Philosophy:** Minimalist, high contrast (dark mode), with atmospheric gradients.
-
-## Key Files
-- `app/layout.tsx`: Root layout with global navigation, footer, and background gradients.
-- `app/page.tsx`: Main landing page content.
-- `app/globals.css`: Tailwind 4 configuration and theme variables.
-- `components/typewriter.tsx`: Custom typewriter effect using Framer Motion.
+- Next.js 15 App Router, React 19, TypeScript, Tailwind CSS 4.
+- Custom components in `components/`; shadcn and Radix are no longer used.
+- Shared theme and responsive styles: `app/globals.css`.
+- Fonts: self-hosted Aspekta variable font in `public/fonts/`, with its license.
+- Theme follows system preference until overridden locally. Use the supplied moon SVG in dark mode.
+- Homepage copy and experience: `app/page.tsx`. Case studies: `lib/projects.ts`.
+- GitHub activity: server-side, cached public calendar with a dated real snapshot fallback. Never substitute fabricated activity.
+- Paper dithering shaders use exact panel backgrounds, respect reduced motion, and pause when offscreen.
+- Preserve `/work` and `/work/[slug]` routes.
+- Use npm and `package-lock.json`; see README for verification commands.

@@ -1,18 +1,13 @@
 import { getProjectBySlug, projects } from "@/lib/projects";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ArrowLeft, Calendar, ExternalLink, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+import { createPageMetadata } from "@/lib/site-metadata";
 
-export async function generateStaticParams() {
-  return projects.map((project) => ({
-    slug: project.slug,
-  }));
+export function generateStaticParams() {
+  return projects.map((project) => ({ slug: project.slug }));
 }
-
 export async function generateMetadata({
   params,
 }: {
@@ -20,19 +15,14 @@ export async function generateMetadata({
 }) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
-
-  if (!project) {
-    return {
-      title: "Project Not Found",
-    };
-  }
-
-  return {
-    title: `${project.title} | Deddy Wolley`,
-    description: project.description,
-  };
+  return project
+    ? createPageMetadata({
+        title: project.title,
+        description: project.description,
+        path: `/work/${slug}`,
+      })
+    : { title: "Project not found" };
 }
-
 export default async function ProjectPage({
   params,
 }: {
@@ -40,64 +30,43 @@ export default async function ProjectPage({
 }) {
   const { slug } = await params;
   const project = getProjectBySlug(slug);
-
-  if (!project) {
-    notFound();
-  }
-
+  if (!project) notFound();
   return (
-    <article className="py-20 max-w-3xl w-full mx-auto">
-      <Link
-        href="/work"
-        className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors"
-      >
-        <ArrowLeft className="w-4 h-4" />
-        Back to Work
+    <article className="inner-page">
+      <Link href="/work" className="back-link">
+        ← Back to work
       </Link>
-
-      <div className="space-y-6">
-        <h1 className="text-4xl md:text-5xl font-bold">{project.title}</h1>
-
-        <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <Calendar className="w-4 h-4" />
-            <span>{project.year}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <User className="w-4 h-4" />
-            <span>{project.role}</span>
-          </div>
-        </div>
-
-        <div className="relative aspect-video w-full rounded-xl overflow-hidden border border-white/10">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
-            <Badge key={tag} variant="secondary">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-
-        <div className="flex gap-4">
-          <Button asChild>
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              View Project <ExternalLink className="w-4 h-4 ml-2" />
-            </a>
-          </Button>
-        </div>
-
-        <div className="prose prose-invert prose-lg max-w-none mt-10">
-          <ReactMarkdown>{project.content}</ReactMarkdown>
-        </div>
+      <h1 className="page-title">{project.title}</h1>
+      <p className="mt-5 text-sm text-muted-foreground">
+        {[project.year, project.role].filter(Boolean).join(" · ")}
+      </p>
+      <Image
+        src={project.image}
+        alt=""
+        width={608}
+        height={342}
+        priority
+        className="project-cover mt-8"
+      />
+      <ul className="mt-6 flex flex-wrap gap-1" aria-label="Technologies">
+        {project.tags.map((tag) => (
+          <li className="skill-tag" key={tag}>
+            {tag}
+          </li>
+        ))}
+      </ul>
+      {project.link && (
+        <a
+          className="project-action mt-6"
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit project ↗
+        </a>
+      )}
+      <div className="prose case-prose mt-10 max-w-none">
+        <ReactMarkdown>{project.content}</ReactMarkdown>
       </div>
     </article>
   );

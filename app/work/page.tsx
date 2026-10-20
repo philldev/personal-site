@@ -1,62 +1,47 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { projects } from "@/lib/projects";
+import { createPageMetadata } from "@/lib/site-metadata";
 
-export const metadata = {
-  title: "Work | Deddy Wolley",
-  description: "Featured work and case studies by Deddy Wolley.",
-};
-
+export const metadata = createPageMetadata({
+  title: "Work",
+  description: "Selected frontend projects and case studies by Deddy Wolley.",
+  path: "/work",
+});
 export default function WorkPage() {
   return (
-    <section className="py-20 max-w-3xl w-full mx-auto">
-      <h1 className="text-4xl font-bold mb-4">Featured Work</h1>
-      <p className="text-muted-foreground text-lg mb-10">
-        A selection of projects and case studies where I&apos;ve focused on
-        performance, usability, and building high-quality digital experiences.
+    <section className="inner-page">
+      <Link className="back-link" href="/">
+        ← Back home
+      </Link>
+      <h1 className="page-title">Selected work</h1>
+      <p className="page-lead">
+        A closer look at the platforms, interfaces, and booking experiences
+        I&apos;ve helped bring to life.
       </p>
-      <div className="grid gap-8">
+      <div className="mt-10 flex flex-col gap-10">
         {projects.map((project) => (
-          <Link key={project.slug} href={`/work/${project.slug}`}>
-            <Card className="overflow-hidden bg-card/50 backdrop-blur-sm border-white/10 hover:border-white/20 transition-colors cursor-pointer h-full pt-0">
-              <div className="relative aspect-video w-full">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <CardHeader>
-                <div className="flex justify-between items-start gap-4">
-                  <div>
-                    <CardTitle className="text-xl mb-2">
-                      {project.title}
-                    </CardTitle>
-                    <CardDescription className="text-base">
-                      {project.description}
-                    </CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+          <Link
+            key={project.slug}
+            href={`/work/${project.slug}`}
+            className="project-card"
+          >
+            <Image
+              src={project.image}
+              alt=""
+              width={608}
+              height={342}
+              className="project-cover"
+            />
+            <h2>{project.title} ↗</h2>
+            <p>{project.description}</p>
+            <ul className="mt-4 flex flex-wrap gap-1" aria-label="Technologies">
+              {project.tags.slice(0, 4).map((tag) => (
+                <li key={tag} className="skill-tag">
+                  {tag}
+                </li>
+              ))}
+            </ul>
           </Link>
         ))}
       </div>

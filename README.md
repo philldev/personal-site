@@ -23,7 +23,7 @@ npm run build
 - Homepage copy, project summaries, and experience: `app/page.tsx`.
 - Case studies: `lib/projects.ts`; existing `/work` and `/work/[slug]` routes are preserved.
 - Colors and responsive layout: `app/globals.css`.
-- Portrait: `public/images/portrait.jpg`, sourced from the owner's public GitHub profile because exported Paper image URLs require authentication.
+- Portrait: `public/images/portrait.webp`, compressed from the owner-supplied high-resolution photograph.
 - Project markers and case-study illustrations are local vector/CSS assets. The illustrations describe the work; they are not product screenshots.
 - Aspekta font and its SIL Open Font License: `public/fonts/`.
 

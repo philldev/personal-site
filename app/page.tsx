@@ -94,7 +94,7 @@ export default function Home() {
           <div className="profile flex items-start gap-3">
             <Image
               className="portrait"
-              src="/images/portrait.jpg"
+              src="/images/portrait.webp"
               alt="Portrait of Deddy Wolley"
               width={80}
               height={80}

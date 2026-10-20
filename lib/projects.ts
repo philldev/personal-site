@@ -2,101 +2,108 @@ export interface Project {
   slug: string;
   title: string;
   description: string;
-  year: string;
+  year?: string;
   role: string;
   tags: string[];
   image: string;
-  link: string;
+  link?: string;
   content: string;
 }
 
 export const projects: Project[] = [
   {
     slug: "oneux",
-    title: "ONE UX — Frontend Architecture for a Multi-Site Marketing Platform",
+    title: "ONE UX — A shared frontend for multiple sites",
     description:
-      "A shared Next.js frontend platform that enables frequent campaign launches across multiple websites, optimized for SEO, performance, and smooth page navigation through server-rendered HTML.",
+      "A shared Next.js codebase and JSON-driven page builder for launching and maintaining multiple marketing sites.",
     year: "2024",
     role: "Frontend Engineer",
     tags: [
       "Next.js",
       "React",
+      "Page builder",
+      "ISR",
       "Tailwind CSS",
       "Docker",
       "CI/CD",
       "AWS ECS",
-      "Incremental Static Regeneration",
-      "UI Builder",
     ],
     image: "/case-study-1.svg",
-    link: "https://amild.id",
     content: `
-I helped our team design and implement the **frontend architecture** of **ONE UX**, a multi-site marketing platform that runs multiple websites from a **single shared Next.js codebase**, with a strong focus on SEO, performance, and scalability at the frontend layer.
+I helped design and build the frontend architecture for **ONE UX**, a platform that brings multiple marketing sites into a shared Next.js codebase.
 
-### The Challenge
-Our client needed to **launch campaigns frequently** and update multiple websites quickly, but the existing frontend setup relied on separate standalone projects. This led to duplicated UI logic, slower iteration, and inconsistent performance across sites.
+## The problem
+Separate frontend projects meant repeating UI work, maintaining similar components in different places, and onboarding developers to multiple codebases. The team needed a common foundation that could still support different sites and campaign pages.
 
-### The Solution
-I helped design the **frontend system** using **Next.js with Incremental Static Regeneration (ISR)**. Pages are rendered as **HTML on the server**, allowing users to navigate between pages with a smoother, more predictable experience compared to purely client-rendered pages. All sites share the same frontend components, layouts, and SEO behavior, while a **custom frontend page builder** enables flexible page composition without repeated frontend development work.
+## The approach
+We used shared components and layouts alongside a **JSON-driven page builder**. Pages could be composed from reusable building blocks rather than implemented separately for every site.
 
-ISR was chosen to ensure fast initial loads, strong SEO, and the ability to update content without full rebuilds.
+**Incremental Static Regeneration (ISR)** allowed content updates without rebuilding every page. Pre-rendered HTML also made page content available before client-side JavaScript ran.
 
-### The Result
-- Faster frontend rollout of new websites and campaign pages for our client
-- Faster code builds due to Next.js **Incremental Static Regeneration**
-- Improved user experience when navigating between pages due to server-rendered HTML
-- Improved Core Web Vitals and SEO reliability
+## My contribution
+- Helped shape the frontend architecture and shared component system.
+- Built page-builder abstractions and implemented the frontend ISR strategy.
+- Helped migrate existing sites onto the shared frontend.
+- Onboarded developers and shared architectural context to unblock implementation work.
 
-### My Contribution
-I helped our team with frontend architecture decisions, implemented the ISR strategy on the frontend, built the page builder abstractions, and handled frontend migration of existing sites. I also supported other frontend developers by helping with **project onboarding**, sharing architectural context, and unblocking implementation questions.
+## The result
+The team gained a shared foundation for building marketing sites, reusing components, and keeping frontend conventions consistent across projects.
 `,
   },
   {
     slug: "premiro",
-    title: "Premiro — Insurance Landing Page & Booking Flow (Frontend)",
+    title: "Premiro — Insurance pages and booking flows",
     description:
-      "SEO-optimized, multi-language insurance landing pages with reusable form architecture, built to deliver a smooth booking experience across multiple insurance products.",
+      "Multilingual insurance pages and reusable booking forms for products with different fields and validation rules.",
     year: "2025",
     role: "Frontend Engineer",
-    tags: [
-      "Next.js",
-      "Incremental Static Regeneration",
-      "SEO",
-      "Multi-Language",
-      "Form Architecture",
-      "Booking Flow",
-    ],
+    tags: ["Next.js", "Booking forms", "Internationalization", "ISR", "SEO"],
     image: "/case-study-2.svg",
     link: "https://premiro.com",
     content: `
-A multi-language insurance landing page and booking flow built with a reusable form architecture, optimized for SEO and user experience through server-rendered pages.
+I built the frontend for **Premiro**, an insurance site with product-specific booking flows in Indonesian and English. I was the **sole frontend developer**, working closely with the tech lead.
 
-I helped our team build the **frontend implementation** of **Premiro**, an insurance landing page and booking platform designed to support multiple insurance products, each with its own form structure and validation rules.
+## The problem
+Different insurance products needed different form fields, validation rules, and booking steps. The frontend also had to support two languages and make landing-page content accessible to search engines.
 
-### The Challenge
-Premiro needed to support:
-- **Multiple insurance products**, each requiring different form fields and validation logic
-- A **multi-step booking experience** that remained clear and easy to use
-- **Multi-language support** for both Indonesian (ID) and English (EN)
-- Strong **SEO requirements** for landing pages while maintaining a smooth user experience
+## The approach
+I used **Next.js** for the landing pages and built reusable form logic and components for the booking experience. Shared patterns kept the forms consistent while allowing each product to define its own fields and validation.
 
-Managing complex, product-specific forms while ensuring good SEO and UX was the main challenge.
+Internationalization covered page content, form labels, and validation messages in both Indonesian and English.
 
-### The Solution
-I designed and implemented the **frontend architecture using Next.js**, enabling pages to be rendered as HTML for better search engine visibility and faster initial loads.
+## My contribution
+- Handled day-to-day frontend implementation and architecture.
+- Built reusable form components and product-specific validation flows.
+- Implemented multilingual content and booking interfaces.
+- Worked with the tech lead on technical direction and reviews.
 
-A **reusable form logic and component system** was created to handle different insurance products while keeping form behavior, validation, and layout consistent.
+## The result
+Premiro gained a consistent booking interface across insurance products and languages, with shared frontend patterns that reduced duplicated form logic.
+`,
+  },
+  {
+    slug: "amild",
+    title: "AMild — From client-rendered React to Next.js",
+    description:
+      "A marketing-site revamp using Next.js and Incremental Static Regeneration to improve performance and SEO.",
+    role: "Frontend Engineer",
+    tags: ["Next.js", "React", "ISR", "Performance", "SEO"],
+    image: "/case-study-3.svg",
+    link: "https://amild.id",
+    content: `
+I helped propose and deliver the revamp of **AMild’s marketing site**, moving it from a client-rendered React application to **Next.js with Incremental Static Regeneration (ISR)**.
 
-Internationalization was integrated so content, form labels, and validation messages could be translated cleanly for both ID and EN, without compromising SEO.
+## The problem
+The existing site rendered its content on the client. The revamp focused on improving performance and SEO by changing how pages were rendered and delivered.
 
-### The Result
-- SEO-friendly landing pages with fast initial page loads
-- Improved user experience during form navigation and submission
-- Reduced duplication through shared form logic and components
-- Consistent experience across multiple insurance products and languages
+## The approach
+We moved to Next.js with ISR, allowing pages to be pre-rendered and refreshed as content changed. Visitors could receive page content in the initial HTML instead of waiting for client-side rendering to populate it.
 
-### My Contribution
-I was the **only frontend developer** on the project, working closely with the **tech lead**. I handled day-to-day frontend implementation and architecture, built reusable form logic and components, implemented SEO and UX improvements with Next.js, integrated multi-language support, and collaborated with the tech lead on technical direction and reviews.
+## My contribution
+I helped propose the move from client-rendered React to Next.js with ISR and contributed to the site revamp.
+
+## The result
+The revamp moved core page content into pre-rendered HTML and introduced ISR for content updates.
 `,
   },
 ];
